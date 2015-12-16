@@ -32,6 +32,12 @@ class Admins::ArticlesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+
+		redirect_to admins_articles_path
+	end
 
 	private
 	

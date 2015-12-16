@@ -2,7 +2,7 @@
 <%= form_for :article, url: admins_article_path, method: :patch do |f| %>
 	<% if @article.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= @article.errors.count %>件のエラーが発生したため保存ができませんでした。</h2>
+			<h2><%= @article.errors.count %> error</h2>
 			<ul>
 				<% @article.errors.full_messages.each do |msg| %>
 					<li><%= msg %></li>
