@@ -8,8 +8,8 @@ class Admins::ArticlesController < ApplicationController
 
 	def create
 		 @article = Article.new(article_params)
-		 @article.save 
-		 redirect_to :action=>"show", :controller=>"admins/articles"
+		 @article.save
+		 redirect_to admins_article_path(@article)
 	end
 
 	def show
