@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   namespace :admins do
     # Admins::ArticlesController
-    resources :articles
+    resources :articles, except: [:show]
   end
 
   

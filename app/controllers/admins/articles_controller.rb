@@ -9,11 +9,7 @@ class Admins::ArticlesController < ApplicationController
 	def create
 		 @article = Article.new(article_params)
 		 @article.save
-		 redirect_to admins_article_path(@article)
-	end
-
-	def show
-		@article = Article.find_by_id(params[:id])
+		 redirect_to admins_articles_path
 	end
 
 	private
