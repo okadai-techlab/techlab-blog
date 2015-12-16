@@ -1,5 +1,8 @@
+
 <ul>
 	<% @articles.each do |a| %>
 		<li><%= a.title %></li>	
 	<% end %>
 </ul>
+
+<%= link_to "new post", :controller => "admins/articles", :action => "new" %>
