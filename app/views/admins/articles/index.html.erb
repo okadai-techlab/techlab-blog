@@ -1,7 +1,11 @@
 
 <ul>
 	<% @articles.each do |a| %>
-		<li><%= a.title %></li>	
+		<li>
+			<%= a.title %>
+			<%= link_to 'Edit', edit_admins_article_path(a.id) %>
+			<%= link_to 'Delete', admins_article_path(a.id), method: :delete, data: { confirm: 'Can I delete it?' } %>
+		</li>	
 	<% end %>
 </ul>
 
