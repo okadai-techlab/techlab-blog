@@ -1,0 +1,14 @@
+machine:
+  ruby:
+    version: 2.3.0
+  timezone: Asia/Tokyo
+
+dependencies:
+  pre:
+    - bundle config build.nokogiri --use-system-libraries
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec cap production deploy
