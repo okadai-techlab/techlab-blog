@@ -21,7 +21,7 @@ server '162.243.134.31', user: 'root', roles: %w{db}
 server '162.243.134.31', user: 'root', roles: %w{web app}
 
 set :ssh_options, {
-  keys: [File.join(ENV["HOME"], ".ssh", "deployserver")],
+  keys: [File.join(ENV["HOME"], ".ssh", "id_deployserver")],
   forward_agent: true,
   auth_methods: %w(publickey)
 }
