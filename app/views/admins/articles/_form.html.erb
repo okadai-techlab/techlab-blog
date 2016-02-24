@@ -1,0 +1,36 @@
+<%= form_for [:admins, @article] do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @article.errors.count %> errors</h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title, "title" %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :content, "text" %><br>
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.label :post_status, "投稿状態" %><br>
+    <%= f.select :post_status, Article.post_statuses.keys.to_a %>
+  </p>
+
+  <p>
+    <%= f.label :post_reservation_time, "投稿日時" %><br>
+    <%= f.datetime_select :post_reservation_time, use_month_numbers: true %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
