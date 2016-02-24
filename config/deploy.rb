@@ -34,5 +34,8 @@ set :default_env, { path: "/root/.anyenv/envs/rbenv/shims:/root/.anyenv/envs/rbe
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+# whenever settings
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
 namespace :deploy do
 end
