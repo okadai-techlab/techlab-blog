@@ -1,28 +1,44 @@
-== README
+てくらぼブログシステム！！ 
+===
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### システムを動かすまで
+Ruby, MySQLが入っている前提  
+もし入っていない場合はインストールしてください  
 
-Things you may want to cover:
+`bundler`をインストール
+```
+$ gem install bundler
+```
 
-* Ruby version
+`bundler`を使ってGemをインストール （pathを入力しておくとGemのバージョン管理とか楽になると思う）
+```
+$ bundle install --path vendor/bundle
+```
 
-* System dependencies
+`config/database.yml`を自分の環境にセッティング
+```
+$ vi config/database.yml
+```
 
-* Configuration
+データベースを更新する
+```
+$ bundle exec rake db:migrate
+```
 
-* Database creation
+サーバーを立ち上げる
+```
+$ bundle exec rails server
+```
 
-* Database initialization
+### Adminユーザーを追加する
+Adminはフォームから追加出来ないのでコンソールから追加します
+```
+$ bundle exec rails console
+> a = Admin.new 
+> a.email = "xxx"
+> a.password = "yyy"
+> a.password_confirmation = "yyy"
+> a.save
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+これで情報が保存されるのでAdminログイン出来るようになります。
