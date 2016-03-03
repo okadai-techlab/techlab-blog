@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id                    :integer          not null, primary key
+#  title                 :string(255)
+#  content               :text(65535)
+#  post_reservation_time :datetime
+#  post_status           :string(255)
+#  admin_id              :integer
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
+
 class Article < ActiveRecord::Base
   belongs_to :admin
   has_many :comments
