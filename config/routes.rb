@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     # Admins::ArticlesController
     resources :articles, except: [:show]
   end
-	get '/articles', to: 'articles#index'
-	get '/articles/:id', to: 'articles#show', as: 'article'
+  get '/articles', to: 'articles#index'
+  get '/articles/:id', to: 'articles#show', as: 'article'
 
   
   # The priority is based upon order of creation: first created -> highest priority.

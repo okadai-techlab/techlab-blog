@@ -1,8 +1,8 @@
 <ul>
-	<% @articles.each do |a| %>
-		<li>
-			<%= a.title %>
-			<%= link_to 'show', article_path(a.id) %>
-		</li>	
-	<% end %>
+  <% @articles.each do |a| %>
+    <li>
+    <%= a.title %>
+    <%= link_to 'show', article_path(a.id) %>
+    </li>	
+  <% end %>
 </ul>

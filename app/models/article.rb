@@ -1,8 +1,8 @@
 class Article < ActiveRecord::Base
   belongs_to :admin
-	has_many :comments
+  has_many :comments
 
-	validates :title, presence: true
+  validates :title, presence: true
 
   # 投稿状態の定義
   enum post_status: {
